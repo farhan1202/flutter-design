@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/home/imagePicker/bindings/image_picker_binding.dart';
+import '../modules/home/imagePicker/views/image_picker_view.dart';
 import '../modules/home/listUser/bindings/list_user_binding.dart';
 import '../modules/home/listUser/views/list_user_view.dart';
 import '../modules/home/mainPage/bindings/main_page_binding.dart';
@@ -40,6 +42,11 @@ class AppPages {
       page: () => ListUserView(),
       binding: ListUserBinding(),
       transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: _Paths.IMAGE_PICKER,
+      page: () => ImagePickerView(),
+      binding: ImagePickerBinding(),
     ),
   ];
 }

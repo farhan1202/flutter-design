@@ -7,6 +7,7 @@ abstract class Routes {
   static const MAIN_PAGE = _Paths.MAIN_PAGE;
   static const REGISTER_PAGE = _Paths.REGISTER_PAGE;
   static const LIST_USER = _Paths.LIST_USER;
+  static const IMAGE_PICKER = _Paths.IMAGE_PICKER;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const MAIN_PAGE = '/main-page';
   static const REGISTER_PAGE = '/register-page';
   static const LIST_USER = '/list-user';
+  static const IMAGE_PICKER = '/image-picker';
 }

@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:app_design/app/data/models/Candidate.dart';
 import 'package:get/get.dart';
+import 'package:path/path.dart';
 
 class AuthController extends GetConnect {
   final url = "http://192.168.100.134/pemilu/api/";
@@ -35,5 +38,20 @@ class AuthController extends GetConnect {
     }
 
     return candidate;
+  }
+
+  Future<Response> uploadImage(File file) async {
+    try {
+      final form = FormData(
+          {'image': MultipartFile(file, filename: basename(file.path))});
+      final response = await post(url + "addImage.php", form);
+      if (response.status.hasError) {
+        return Future.error(response.body);
+      } else {
+        return response;
+      }
+    } catch (e) {
+      return Future.error(e.toString());
+    }
   }
 }

@@ -114,9 +114,14 @@ class MainPageView extends GetView<MainPageController> {
                       SizedBox(
                         height: size.height * 0.015,
                       ),
-                      cardTemplate(
-                        textTitle: "Add User",
-                        textSubtitle: "Menambahkan daftar user",
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.IMAGE_PICKER);
+                        },
+                        child: cardTemplate(
+                          textTitle: "Add User",
+                          textSubtitle: "Menambahkan daftar user",
+                        ),
                       ),
                       SizedBox(
                         height: size.height * 0.015,
